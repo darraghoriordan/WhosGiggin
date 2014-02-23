@@ -9,7 +9,7 @@ using System.Data.Entity;
 namespace WhosGiggin.Models
 {
     [Table("Venues")]
-    public class VenueModel
+    public class VenueModel : IIdentifiableObject
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -38,10 +38,6 @@ namespace WhosGiggin.Models
         [Display(Name = "Phone Number")]
         [DataType(DataType.Text)]
         public string ContactPhone { get; set; }
-
-        [Display(Name = "Name")]
-        [DataType(DataType.Text)]
-        public string Name { get; set; }
 
         [Display(Name = "Website")]
         [DataType(DataType.Url)]

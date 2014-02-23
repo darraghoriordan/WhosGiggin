@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace WhosGiggin.Models
 {
-    public class MediaModel
+    public class MediaModel : IIdentifiableObject
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]

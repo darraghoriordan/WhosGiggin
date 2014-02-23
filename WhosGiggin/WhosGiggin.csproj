@@ -189,14 +189,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VenueController.cs" />
     <Compile Include="DataContext\DatabaseContext.cs" />
+    <Compile Include="DataContext\GenericRepository.cs" />
+    <Compile Include="DataContext\IUOW.cs" />
+    <Compile Include="DataContext\IWhosGigginRepository.cs" />
+    <Compile Include="DataContext\UOW.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\IIdentifiableObject.cs" />
+    <Compile Include="Models\VenueModel.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\MediaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -276,6 +284,18 @@
     <Content Include="Views\Shared\_Layout - Copy.cshtml" />
     <Content Include="Views\Shared\_html5shiv.cshtml" />
     <Content Include="Views\Home\BSExamples.cshtml" />
+    <Content Include="Views\Venue\Create.cshtml" />
+    <Content Include="Views\Venue\Edit.cshtml" />
+    <Content Include="Views\Venue\Delete.cshtml" />
+    <Content Include="Views\Venue\Details.cshtml" />
+    <Content Include="Views\Venue\Index.cshtml" />
+    <Content Include="Views\Venue\_CreateOrEdit.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Event\Delete.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

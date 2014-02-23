@@ -9,7 +9,7 @@ using System.Data.Entity;
 namespace WhosGiggin.Models
 {
     [Table("Events")]
-    public class EventModel
+    public class EventModel: IIdentifiableObject
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
