@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using WhosGiggin.Filters;
 using WhosGiggin.Models;
+using WhosGiggin.DataContext;
 
 namespace WhosGiggin.Controllers
 {
@@ -263,7 +264,7 @@ namespace WhosGiggin.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (DatabaseContext db = new DatabaseContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
