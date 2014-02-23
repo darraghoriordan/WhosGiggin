@@ -17,8 +17,5 @@ namespace WhosGiggin.DataContext
         public DbSet<VenueModel> Venues { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
 
-        public DbSet<VenueModel> VenueModels { get; set; }
-
-        public DbSet<EventModel> EventModels { get; set; }
     }
 }
