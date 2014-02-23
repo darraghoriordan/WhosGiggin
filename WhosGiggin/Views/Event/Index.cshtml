@@ -1,0 +1,83 @@
+@model IEnumerable<WhosGiggin.Models.EventModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Title
+        </th>
+        <th>
+            StartDate
+        </th>
+        <th>
+            FinishDate
+        </th>
+        <th>
+            Venue
+        </th>
+        <th>
+            Restrictions
+        </th>
+        <th>
+            WebsiteUrl
+        </th>
+        <th>
+            ListedBy
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            PrimaryImageUrl
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.Title
+        </td>
+        <td>
+			@String.Format("{0:g}", item.StartDate)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.FinishDate)
+        </td>
+        <td>
+			@(item.Venue == null ? "None" : item.Venue.Name)
+        </td>
+        <td>
+			@item.Restrictions
+        </td>
+        <td>
+			@item.WebsiteUrl
+        </td>
+        <td>
+			@item.ListedBy
+        </td>
+        <td>
+			@item.Description
+        </td>
+        <td>
+			@item.PrimaryImageUrl
+        </td>
+    </tr>
+}
+
+</table>
+
+

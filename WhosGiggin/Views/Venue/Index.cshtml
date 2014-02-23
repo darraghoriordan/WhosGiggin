@@ -1,0 +1,83 @@
+@model IEnumerable<WhosGiggin.Models.VenueModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Region
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Postcode
+        </th>
+        <th>
+            ContactPhone
+        </th>
+        <th>
+            WebsiteUrl
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            PrimaryImageUrl
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.City
+        </td>
+        <td>
+			@item.Region
+        </td>
+        <td>
+			@item.Address
+        </td>
+        <td>
+			@item.Postcode
+        </td>
+        <td>
+			@item.ContactPhone
+        </td>
+        <td>
+			@item.WebsiteUrl
+        </td>
+        <td>
+			@item.Description
+        </td>
+        <td>
+			@item.PrimaryImageUrl
+        </td>
+    </tr>
+}
+
+</table>
+
+
