@@ -197,13 +197,27 @@
     <Compile Include="DataContext\IUOW.cs" />
     <Compile Include="DataContext\IWhosGigginRepository.cs" />
     <Compile Include="DataContext\UOW.cs" />
+    <Compile Include="Extensions\MigrationExtensions.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="general-en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>general-en.resx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201402231028002_UOW.cs" />
-    <Compile Include="Migrations\201402231028002_UOW.Designer.cs">
-      <DependentUpon>201402231028002_UOW.cs</DependentUpon>
+    <Compile Include="Migrations\201402250850048_inital.cs" />
+    <Compile Include="Migrations\201402250850048_inital.Designer.cs">
+      <DependentUpon>201402250850048_inital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402250906571_validation.cs" />
+    <Compile Include="Migrations\201402250906571_validation.Designer.cs">
+      <DependentUpon>201402250906571_validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402250950089_event link.cs" />
+    <Compile Include="Migrations\201402250950089_event link.Designer.cs">
+      <DependentUpon>201402250950089_event link.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -214,6 +228,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Bootstrap\bootstrap-theme.css" />
     <Content Include="Content\Bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\Bootstrap\bootstrap.css" />
@@ -222,14 +240,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap.css.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\Bootstrap\bootstrap-theme.css.map" />
-    <Content Include="Content\Bootstrap\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
@@ -308,8 +328,18 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201402231028002_UOW.resx">
-      <DependentUpon>201402231028002_UOW.cs</DependentUpon>
+    <EmbeddedResource Include="general-en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>general-en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402250850048_inital.resx">
+      <DependentUpon>201402250850048_inital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402250906571_validation.resx">
+      <DependentUpon>201402250906571_validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402250950089_event link.resx">
+      <DependentUpon>201402250950089_event link.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

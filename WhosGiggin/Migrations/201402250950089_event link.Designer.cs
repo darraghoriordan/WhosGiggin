@@ -7,13 +7,13 @@ namespace WhosGiggin.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
-    public sealed partial class UOW : IMigrationMetadata
+    public sealed partial class eventlink : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UOW));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(eventlink));
         
         string IMigrationMetadata.Id
         {
-            get { return "201402231028002_UOW"; }
+            get { return "201402250950089_event link"; }
         }
         
         string IMigrationMetadata.Source

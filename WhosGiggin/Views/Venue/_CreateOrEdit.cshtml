@@ -7,8 +7,9 @@
 </div>
 <div class="editor-field">
     @Html.EditorFor(model => model.Name)
-    @Html.ValidationMessageFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name, string.Empty, new { @class = "alert alert-danger" })
 </div>
+
 
 <div class="editor-label">
     @Html.LabelFor(model => model.City)
@@ -39,7 +40,7 @@
 </div>
 <div class="editor-field">
     @Html.EditorFor(model => model.Postcode)
-    @Html.ValidationMessageFor(model => model.Postcode)
+    @Html.ValidationMessageFor(model => model.Postcode, string.Empty, new { @style = "alert alert-danger" })
 </div>
 
 <div class="editor-label">

@@ -54,6 +54,10 @@ namespace WhosGiggin.Controllers
         public ActionResult Create(VenueModel venuemodel)
         {
             if (ModelState.IsValid) {
+                if (string.IsNullOrEmpty(venuemodel.ListedBy))
+                {
+                    venuemodel.ListedBy = User.Identity.Name;
+                }
                 _repositoryUOW.VenueRepository.InsertOrUpdate(venuemodel);
                 _repositoryUOW.VenueRepository.Save();
                 return RedirectToAction("Index");

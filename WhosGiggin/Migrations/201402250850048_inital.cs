@@ -3,7 +3,7 @@ namespace WhosGiggin.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UOW : DbMigration
+    public partial class inital : DbMigration
     {
         public override void Up()
         {

@@ -43,6 +43,8 @@ namespace WhosGiggin.Controllers
 
         public ActionResult Create()
         {
+            this.ViewBag.VenueId = new SelectList(_repositoryUOW.VenueRepository.All, "Id", "Name");
+
             return View();
         } 
 
@@ -53,6 +55,10 @@ namespace WhosGiggin.Controllers
         public ActionResult Create(EventModel eventmodel)
         {
             if (ModelState.IsValid) {
+                if (string.IsNullOrEmpty(eventmodel.ListedBy))
+                {
+                    eventmodel.ListedBy = User.Identity.Name;
+                }
                 _repositoryUOW.EventRepository.InsertOrUpdate(eventmodel);
                 _repositoryUOW.EventRepository.Save();
                 return RedirectToAction("Index");
@@ -66,6 +72,8 @@ namespace WhosGiggin.Controllers
  
         public ActionResult Edit(int id)
         {
+            this.ViewBag.VenueId = new SelectList(_repositoryUOW.VenueRepository.All, "Id", "Name");
+
             return View(_repositoryUOW.EventRepository.Find(id));
         }
 

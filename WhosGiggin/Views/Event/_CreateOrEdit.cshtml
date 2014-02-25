@@ -9,7 +9,13 @@
     @Html.EditorFor(model => model.Title)
     @Html.ValidationMessageFor(model => model.Title)
 </div>
-
+<div class="editor-label">
+    @Html.LabelFor(model => model.Venue)
+</div>
+<div class="editor-field">
+    @Html.DropDownList("VenueId", (SelectList)ViewData["Venues"])
+    @Html.ValidationMessageFor(model => model.VenueId)
+</div>
 <div class="editor-label">
     @Html.LabelFor(model => model.StartDate)
 </div>
@@ -40,14 +46,6 @@
 <div class="editor-field">
     @Html.EditorFor(model => model.WebsiteUrl)
     @Html.ValidationMessageFor(model => model.WebsiteUrl)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.ListedBy)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.ListedBy)
-    @Html.ValidationMessageFor(model => model.ListedBy)
 </div>
 
 <div class="editor-label">
