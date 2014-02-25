@@ -19,36 +19,30 @@ namespace WhosGiggin
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/bootstrap.js"
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/bootstrap-datetimepicker.min.js"
                 ));
+            bundles.Add(new ScriptBundle("~/bundles/whosgiggin").Include(
+                "~/Scripts/whosgiggin.js"));
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/Content/Bootstrap/bootstrap.css",
-                    "~/Content/Bootstrap/bootstrap-theme.css",
-                    "~/Content/site.css"
-                ));
-
+            //supports old browsers with bootstrap
             bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include(
             "~/Scripts/respond.js",
             "~/Scripts/html5shiv.js"));
 
-            //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-            //            "~/Content/themes/base/jquery.ui.core.css",
-            //            "~/Content/themes/base/jquery.ui.resizable.css",
-            //            "~/Content/themes/base/jquery.ui.selectable.css",
-            //            "~/Content/themes/base/jquery.ui.accordion.css",
-            //            "~/Content/themes/base/jquery.ui.autocomplete.css",
-            //            "~/Content/themes/base/jquery.ui.button.css",
-            //            "~/Content/themes/base/jquery.ui.dialog.css",
-            //            "~/Content/themes/base/jquery.ui.slider.css",
-            //            "~/Content/themes/base/jquery.ui.tabs.css",
-            //            "~/Content/themes/base/jquery.ui.datepicker.css",
-            //            "~/Content/themes/base/jquery.ui.progressbar.css",
-            //            "~/Content/themes/base/jquery.ui.theme.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                    "~/Content/Bootstrap/bootstrap.css",
+                    "~/Content/Bootstrap/bootstrap-theme.css",
+                    "~/Content/Bootstrap/bootstrap-datetimepicker.min.css",
+                    "~/Content/site.css"
+                ));
+
+
+
 
         }
     }
