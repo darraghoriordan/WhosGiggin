@@ -1,3 +1,8 @@
 ﻿$(document).ready(function () {
-        $(".datetimepickerenabled").datetimepicker();
+    $(".datetimepickerenabled").datetimepicker({
+        defaultDate: moment()
     });
+
+    // override jquery validate plugin defaults
+
+});

@@ -31,9 +31,8 @@ namespace WhosGiggin.Models
         [Display(Name = "Finishes")]
         [DataType(DataType.DateTime)]
         public DateTime FinishDate { get; set; }
-
-        
-        [DataType(DataType.Custom)]
+              
+    
         public virtual VenueModel Venue { get; set; }
 
         [Required]

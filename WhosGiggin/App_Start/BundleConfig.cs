@@ -16,11 +16,14 @@ namespace WhosGiggin
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.validate*",
+                        "~/Scripts/whosgiggin.jquery.validate.overrides.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
+                   "~/Scripts/moment.min.js",
                 "~/Scripts/bootstrap-datetimepicker.min.js"
+             
                 ));
             bundles.Add(new ScriptBundle("~/bundles/whosgiggin").Include(
                 "~/Scripts/whosgiggin.js"));
@@ -37,7 +40,7 @@ namespace WhosGiggin
             bundles.Add(new StyleBundle("~/Content/css").Include(
                     "~/Content/Bootstrap/bootstrap.css",
                     "~/Content/Bootstrap/bootstrap-theme.css",
-                    "~/Content/Bootstrap/bootstrap-datetimepicker.min.css",
+                    "~/Content/bootstrap-datetimepicker.min.css",
                     "~/Content/site.css"
                 ));
 
