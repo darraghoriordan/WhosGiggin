@@ -1,17 +1,13 @@
 @model WhosGiggin.Models.VenueModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Venue- " + Model.Name;
 }
 
-<h2>Delete</h2>
+<h2>Delete Venue- @Model.Name</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to delete this venue?</h3>
 <fieldset>
-    <legend>VenueModel</legend>
-
-    <div class="display-label">Name</div>
-    <div class="display-field">@Model.Name</div>
 
     <div class="display-label">City</div>
     <div class="display-field">@Model.City</div>

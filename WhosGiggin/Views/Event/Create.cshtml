@@ -1,16 +1,15 @@
 @model WhosGiggin.Models.EventModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Event";
 }
 
-<h2>Create</h2>
+<h2>Add Event</h2>
 
 @using (Html.BeginForm("Create", "Event", FormMethod.Post, new { @class = "form-horizontal" })) 
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Event</legend>
 
 		@Html.Partial("_CreateOrEdit", Model)
 

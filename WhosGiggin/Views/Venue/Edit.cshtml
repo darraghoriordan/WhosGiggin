@@ -1,22 +1,22 @@
 @model WhosGiggin.Models.VenueModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Venue - " + Model.Name;
 }
 
-<h2>Venue</h2>
+<h2>Edit Venue - @Model.Name</h2>
 
-@using (Html.BeginForm("Edit", "Venue", FormMethod.Post, new { @class = "form-horizontal span12" })) { 
+@using (Html.BeginForm("Edit", "Venue", FormMethod.Post, new { @class = "form-horizontal span12" }))
+{
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Edit</legend>
 
         @Html.HiddenFor(model => model.Id)
-		@Html.Partial("_CreateOrEdit", Model)
+        @Html.Partial("_CreateOrEdit", Model)
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-primary" type="submit" value="Create" title="Create">Create</button>
+                <button class="btn btn-primary" type="submit" value="Save" title="Save">Save</button>
                 @Html.ActionLink("Cancel", "Index", new { }, new { @role = "button", @class = "btn btn-danger" })
             </div>
         </div>

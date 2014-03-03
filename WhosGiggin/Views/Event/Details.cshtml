@@ -1,44 +1,54 @@
 @model WhosGiggin.Models.EventModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Model.Title;
 }
 
-<h2>Details</h2>
+<h2>@Model.Title</h2>
 
 <fieldset>
-    <legend>EventModel</legend>
 
-    <div class="display-label">Title</div>
-    <div class="display-field">@Model.Title</div>
-
-    <div class="display-label">StartDate</div>
-    <div class="display-field">@String.Format("{0:g}", Model.StartDate)</div>
-
-    <div class="display-label">FinishDate</div>
-    <div class="display-field">@String.Format("{0:g}", Model.FinishDate)</div>
-
-    <div class="display-label">Venue</div>
-    <div class="display-field">@(Model.Venue == null ? "None" : Model.Venue.Name)</div>
-
-    <div class="display-label">Restrictions</div>
-    <div class="display-field">@Model.Restrictions</div>
-
-    <div class="display-label">WebsiteUrl</div>
-    <div class="display-field">@Model.WebsiteUrl</div>
-
-    <div class="display-label">ListedBy</div>
-    <div class="display-field">@Model.ListedBy</div>
-
-    <div class="display-label">Description</div>
-    <div class="display-field">@Model.Description</div>
-
-    <div class="display-label">PrimaryImageUrl</div>
-    <div class="display-field">@Model.PrimaryImageUrl</div>
+    <div class="row">
+        <div class="display-label col-sm-2">Title</div>
+        <div class="display-field">@Model.Title</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">StartDate</div>
+        <div class="display-field">@String.Format("{0:g}", Model.StartDate)</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">FinishDate</div>
+        <div class="display-field">@String.Format("{0:g}", Model.FinishDate)</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Venue</div>
+        <div class="display-field">@(Model.Venue == null ? "None" : Model.Venue.Name)</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Restrictions</div>
+        <div class="display-field">@Model.Restrictions</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">WebsiteUrl</div>
+        <div class="display-field">@Model.WebsiteUrl</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">ListedBy</div>
+        <div class="display-field">@Model.ListedBy</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-md-2">Description</div>
+        <div class="display-field">@Model.Description</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">PrimaryImageUrl</div>
+        <div class="display-field">@Model.PrimaryImageUrl</div>
+    </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="row">
+    <div class="col-sm-2">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @role = "button", @class = "btn btn-info" })
+    </div>   @Html.ActionLink("Back to List", "Index",null, new { @role = "button", @class = "btn btn-info" })
 </p>
 
 

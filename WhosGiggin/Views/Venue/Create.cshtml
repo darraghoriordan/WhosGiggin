@@ -1,16 +1,15 @@
 @model WhosGiggin.Models.VenueModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add Venue";
 }
 
-<h2>Venue</h2>
+<h2>Add Venue</h2>
 
 @using (Html.BeginForm("Create", "Venue", FormMethod.Post, new { @class = "form-horizontal span12" }))
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Create</legend>
 
         @Html.Partial("_CreateOrEdit", Model)
 

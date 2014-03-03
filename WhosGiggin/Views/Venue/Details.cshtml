@@ -1,16 +1,13 @@
 @model WhosGiggin.Models.VenueModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Venue Details - " + Model.Name;
 }
 
-<h2>Details</h2>
+<h2>@Model.Name</h2>
 
 <fieldset>
-    <legend>VenueModel</legend>
-
-    <div class="display-label">Name</div>
-    <div class="display-field">@Model.Name</div>
+    <legend>Details</legend>
 
     <div class="display-label">City</div>
     <div class="display-field">@Model.City</div>
@@ -36,9 +33,10 @@
     <div class="display-label">PrimaryImageUrl</div>
     <div class="display-field">@Model.PrimaryImageUrl</div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="row">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @role = "button", @class = "btn btn-info" })
+    @Html.ActionLink("Back to List", "Index", null, new { @role = "button", @class = "btn btn-info" })
 </p>
+
 
 
