@@ -8,30 +8,49 @@
 
 <fieldset>
     <legend>Details</legend>
+    <div class="row">
+        <div class="display-label col-sm-2">City</div>
+        <div class="display-field col-sm-10">@Model.City</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Region</div>
+        <div class="display-field col-sm-10">@Model.Region</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Address</div>
+        <div class="display-field col-sm-10">@Model.Address</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Postcode</div>
+        <div class="display-field col-sm-10">@Model.Postcode</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Contact Phone</div>
+        <div class="display-field col-sm-10">@Model.ContactPhone</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Website</div>
+        <div class="display-field col-sm-10">
+            @if (Model.WebsiteUrl != null)
+            {
+                <a href="@Model.WebsiteUrl">@Model.WebsiteUrl</a>
+            }
+        </div>
 
-    <div class="display-label">City</div>
-    <div class="display-field">@Model.City</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Description</div>
+        <div class="display-field col-sm-10">@Model.Description</div>
+    </div>
+    <div class="row">
+        <div class="display-label col-sm-2">Image</div>
+        <div class="display-field col-sm-10">
+            @if (Model.PrimaryImageUrl != null)
+            {
+                <img src="@Model.PrimaryImageUrl" />}
+        </div>
 
-    <div class="display-label">Region</div>
-    <div class="display-field">@Model.Region</div>
-
-    <div class="display-label">Address</div>
-    <div class="display-field">@Model.Address</div>
-
-    <div class="display-label">Postcode</div>
-    <div class="display-field">@Model.Postcode</div>
-
-    <div class="display-label">ContactPhone</div>
-    <div class="display-field">@Model.ContactPhone</div>
-
-    <div class="display-label">WebsiteUrl</div>
-    <div class="display-field">@Model.WebsiteUrl</div>
-
-    <div class="display-label">Description</div>
-    <div class="display-field">@Model.Description</div>
-
-    <div class="display-label">PrimaryImageUrl</div>
-    <div class="display-field">@Model.PrimaryImageUrl</div>
+    </div>
 </fieldset>
 <p class="row">
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @role = "button", @class = "btn btn-info" })

@@ -63,5 +63,10 @@ namespace WhosGiggin.Models
         [Display(Name = "Main Image")]
         [DataType(DataType.ImageUrl)]
         public string PrimaryImageUrl { get; set; }
+
+ 
+        [Display(Name = "Price")]
+        [DataType(DataType.Currency)]
+        public decimal Price { get; set; }
     }
 }

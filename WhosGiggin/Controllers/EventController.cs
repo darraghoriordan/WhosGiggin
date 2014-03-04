@@ -12,11 +12,6 @@ namespace WhosGiggin.Controllers
     {
 		private readonly IUOW _repositoryUOW;
 
-		// If you are using Dependency Injection, you can delete the following constructor
-        public EventController() : this(new UOW())
-        {
-        }
-
         public EventController(IUOW eventmodelRepository)
         {
             _repositoryUOW = eventmodelRepository;

@@ -59,7 +59,14 @@
                 @String.Format("{0:g}", item.FinishDate)
             </td>
             <td>
-                @(item.Venue == null ? "None" : item.Venue.Name)
+                @if (item.Venue == null)
+                {
+                    @:"None"
+                }
+                else
+                {
+                    @Html.ActionLink(item.Venue.Name, "Details", "Venue", new { id = item.Venue.Id }, null)
+                }
             </td>
             <td>
                 @item.Restrictions
@@ -80,5 +87,3 @@
     }
 
 </table>
-
-
