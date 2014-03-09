@@ -11,16 +11,14 @@ namespace WhosGiggin.DataContext
         private DatabaseContext _context = new DatabaseContext();
         private GenericRepository<VenueModel> _venueRepository;
         private GenericRepository<EventModel> _eventRepository;
-        
+        public UOW(GenericRepository<VenueModel> venueRepository, GenericRepository<EventModel> eventRepository) {
+            this._venueRepository = venueRepository;
+            this._eventRepository = eventRepository;
+        }
         public GenericRepository<VenueModel> VenueRepository
         {
             get
-            {
-
-                if (_venueRepository == null)
-                {
-                    _venueRepository = new GenericRepository<VenueModel>(_context);
-                }
+            {          
                 return _venueRepository;
             }
         }
@@ -29,11 +27,6 @@ namespace WhosGiggin.DataContext
         {
             get
             {
-
-                if (_eventRepository == null)
-                {
-                    _eventRepository = new GenericRepository<EventModel>(_context);
-                }
                 return _eventRepository;
             }
         }

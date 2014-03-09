@@ -2,16 +2,23 @@
 
 @{
     ViewBag.Title = "Home Page";
+    var rowClasses = new string[]{"l1Row","l2Row","l3Row","l4Row","l5Row","l6Row"};
+    int dateRowCounter=0;
 }
 <div class="jumbotron">
-    @foreach (var e in Model.Events.OrderByDescending(m=>m.StartDate)) { 
-        <div class="row">
-            <div class="col-sm-2">@e.StartDate</div>
-            <div class="col-sm-4">@e.Title</div>
-            <div class="col-sm-4">@e.Venue.Name</div>
-            <div class="col-sm-2">@e.Price</div>
-            <div class="col-sm-2">@Html.ActionLink("Info", "Details","Event", new {id=@e.Id }, null)</div>
-        </div>
-    
+    @foreach (var d in Model.Events.Select(m => m.StartDate).Distinct().OrderByDescending(d => d))
+    {
+        
+        foreach (var e in Model.Events.Where(m => m.StartDate.Date == d.Date))
+        {
+            <div class="row @rowClasses[dateRowCounter]">
+                <div class="col-sm-2">@e.StartDate</div>
+                <div class="col-sm-4">@e.Title</div>
+                <div class="col-sm-4">@e.Venue.Name</div>
+                <div class="col-sm-2">@e.Price</div>
+                <div class="col-sm-2">@Html.ActionLink("Info", "Details", "Event", new { id = @e.Id }, null)</div>
+            </div>
+        }
+        dateRowCounter++;
     }
 </div>

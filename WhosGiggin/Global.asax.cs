@@ -15,23 +15,21 @@ namespace WhosGiggin
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
-    public class MvcApplication : NinjectHttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AuthConfig.RegisterAuth();           
-        }
-
-        protected override IKernel CreateKernel()
-        {
-            return DIConfig.GetKernel();
-            
-        }
+            AuthConfig.RegisterAuth();
+            NinjectContainer.RegisterModules(NinjectModules.Modules);  
+        }      
+                 
+        
     }
 }
